@@ -1,0 +1,90 @@
+/*
+this content is stored in a file named "site.css"
+in a directory named "css" in the web root
+*/
+
+.fancy-header {
+    color: green;
+    text-decoration: scroll;
+}
+.agree_button {
+	background-color: blue;
+	text-align: center;
+}
+
+em {
+	color: green;
+}
+header {
+	color: teal;
+	text-decoration: underline;
+	font-size: 30px;
+}
+
+body {
+	background-image: url(http://31.media.tumblr.com/61c6c84649f919f50273b7f8cfe5d9be/tumblr_nu3di1K07i1u3ji4yo1_500.gif);
+	font-family: helvetica;
+	color: yellow;
+}
+
+ ul {
+    list-style: disc;
+}
+
+table {
+	width: 100%;
+	border:5px solid #73AD21;
+}
+
+td:hover {
+	background-color:red
+}
+
+tr:nth-child(even) {
+	background-color: teal;
+}
+
+a:hover {
+	background-color: yellow;
+	color:teal;
+}
+
+.blink_me {
+  animation: blink_me 1s linear infinite;
+}
+
+/*
+The dot before fancy header designates a CLASS
+
+classes are the go-to selector, but there is one other option: IDs. but IDs use hashtags instead of periods.
+
+ID tags select a SINGLE SPECIFIED ITEM. Rules applied to an ID tag override ALL OTHER 
+*/
+/*
+
+
+		selector {
+			property1: value;
+			property2: value2;
+
+id selector uses hashtag
+class selector uses a period
+
+#username, #password {
+	color:red;
+	background-color:orange;
+}
+comma means [selector] OR [selector]
+
+a space indicates descendedness. A DESCENDANT SELECTOR:
+
+			nav li {
+				
+			}
+use > for DIRECT DESCENDANT SELECTOR
+
+
+
+*/
+
+

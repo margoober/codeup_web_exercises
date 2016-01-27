@@ -1,0 +1,50 @@
+body {
+	font-family: helvetica;
+	font-style: italic;
+	font-size: 25px;
+	text-align: left;
+	background-image: url("https://i.ytimg.com/vi/JquobII5VjA/maxresdefault.jpg");
+}
+a:link {
+	color: white;
+}
+a:visited {
+	color: white;
+}
+a:hover {
+	color: white;
+}
+div {
+	width: 250px;
+	height: 50px;
+	border: 3px solid #D3D3D3;
+	border-radius: 10px;
+	color: white;
+	padding: 5px;
+	margin-top: 10px;
+	font-size: 20px;
+	font-style: normal;
+}
+#red {
+	background-image: url("https://media.giphy.com/media/kxGCFAvVTpONi/giphy.gif");
+}
+#orange {
+	background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/cd78ec13369885.56272fbd2a954.gif");
+	margin-left: 40px;
+}
+#yellow {
+	background-image: url("http://www.gifizer.com/gifs/in/b1ea001ac5571135550d1d263538bc6e.gif");
+	margin-left: 80px;
+}
+#green {
+	background-image: url("http://orig06.deviantart.net/72cf/f/2012/200/2/8/289c9d07a1715ad384382979f9a4fbfa-d57vbnf.gif");
+	margin-left: 120px;
+}
+#blue {
+	background-image: url("http://www.cellphone-wallpapers.net/Wallpapers/Screensavers//water.gif");
+	margin-left: 160px;
+}
+#violet {
+	background-image: url("https://s-media-cache-ak0.pinimg.com/originals/f2/ce/bd/f2cebd5bd7e7e34d3ec38bea6447c10b.gif");
+	margin-left: 200px;
+}
