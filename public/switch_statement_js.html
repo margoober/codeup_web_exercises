@@ -1,0 +1,51 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>Switch Statement</title>
+</head>
+<body>
+	<script>
+	"use strict"
+// ignore these lines for now
+// just know that the variable 'color' will end up with a random value from the colors array
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'violet'];
+var color = colors[Math.floor(Math.random()*colors.length)];
+//var name = prompt("What is your name?")//
+console.log("My God, " + name + "! Your color is " + color + " :'(")
+switch (color) {
+	case "blue":
+		console.log("Blue is the color of a bad blue boat.");
+		break;
+	case "red":
+		console.log("Red is the color of the devil's worst dirt.");
+		break;
+	case "orange":
+		console.log("Orange is the color of my worst juice.");
+		break;
+	case "yellow":
+		console.log("Yellow is one hell of a sun-colored tragedy.")
+		break;
+	case "green":
+		console.log("Green is one nasty ass muppet-color mess.")
+		break;
+	default:
+		console.log("That color is too foul to even speak of.")
+
+}
+
+var i = 10;
+
+do {
+    console.log('while loop iteration #' + i);
+    i++;
+} while (i < 10);
+    // todo: create a case statement that will handle every color except indigo and violet
+    // todo: when a color is encountered log a message that tells the color, and an object of that color
+    //       example: Blue is the color of the sky.
+
+    // todo: create a default case that will catch indigo and violet
+    // todo: for the default case, log: I do not know anything by that color.
+
+</script>
+</body>
+</html>
