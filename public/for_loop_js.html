@@ -1,0 +1,28 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>For Loop</title>
+</head>
+<body>
+	<script>
+		/for loop. the order matters!/
+	for (var counter = 100; counter > 0; counter = counter - 5) {
+		console.log(counter);
+	}
+
+	for (var counterOdd = 1; counterOdd < 100; counterOdd ++) {
+		if (counterOdd % 2 != 0) {
+			console.log(counterOdd)
+		}
+	}
+
+	for (var counterEven = 2; counterEven < 101; counterEven ++)
+		if (counterEven % 2 == 0 && counterEven != 100) {
+			console.log(counterEven + " is an even number!")
+		} else if (counterEven == 100) {
+			console.log(counterEven + " is the biggest even number there is!")
+		}
+
+	</script>
+</body>
+</html>
