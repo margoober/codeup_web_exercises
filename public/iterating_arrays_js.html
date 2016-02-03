@@ -11,8 +11,17 @@
 		for (s = 0; s <= (slimeNames.length - 1); s ++)
 		console.log("I love " + slimeNames[s] + ". It's number " + (s + 1) + " on my list.")	
 		//put more succinctly
-		slimeNames.forEach(function (element, index, array) {
-			console.log("The slime ranked number " + (index + 1) + " is " + element + ".");
+		slimeNames.forEach(function (element, index, array) {if (index == 0) {
+			console.log("The slime ranked " + (index + 1) + "st is " + element + ".");
+		} else if (index == 1) {
+			console.log("The slime ranked " + (index + 1) + "nd is " + element + ".");
+		} else if (index == 2) {
+			console.log("The slime ranked " + (index + 1)
+				+ "rd is " + element + ".");
+		}
+		else {
+			console.log("The slime ranked " + (index + 1) + "th is " + element + ".")
+		}
 		});
 	})();
 	</script>
