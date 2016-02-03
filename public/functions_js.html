@@ -1,0 +1,63 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>Functions</title>
+</head>
+<body>
+	<script>
+	"use strict"
+	var myNameIs = "Margot";
+	function sayHello(name) {
+		return ("Hello! My name is " + name)
+	}
+	console.log(sayHello(myNameIs))
+	var random = Math.floor((Math.random()*100)+1);
+	function isOdd(number) {
+		if (number % 2 == 0) {
+			return (number + "! It's even!")
+		} else {
+			return (number + "! She's an odd bird.")
+		}
+	}
+	function numberGuarantee(guarantee1, guarantee2) {
+		if (isNaN(guarantee1) || isNaN(guarantee2)) {
+		alert("Do, you EVEN know what's is a number IS?????");
+		return false;
+	} else {return true}
+	}
+	function sum(add1,add2) {
+		if (numberGuarantee(add1, add2)) {
+		return (add1 + add2)
+	}
+	}
+	function difference(sub1, sub2) {
+		if (numberGuarantee(sub1, sub2)) {
+		return (sub1 - sub2);
+	}
+	}
+	function mult(mult1, mult2) {
+		if (numberGuarantee(mult1, mult2)) {
+		return (mult1 * mult2);
+	}
+	}
+	function quot(quot1, quot2) {
+		if (numberGuarantee(quot1, quot2)) {
+		return (quot1 / quot2);
+	}
+	}
+	function rem(rem1, rem2) {
+		if (isNaN(rem1) || isNaN(rem2)) {
+			console.log("I know many numbers, and that is NOT one of them.");
+		} else {
+		return (rem1 % rem2)
+		};
+	}
+	console.log(sum(3, 5))
+	console.log(difference(9, 6))
+	console.log(mult(2, 7))
+	console.log(quot(40, 4))
+	console.log(rem(36, 24))
+	console.log(isOdd(random))
+	</script>
+</body>
+</html>

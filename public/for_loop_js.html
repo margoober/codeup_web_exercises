@@ -9,20 +9,32 @@
 	for (var counter = 100; counter > 0; counter = counter - 5) {
 		console.log(counter);
 	}
-
 	for (var counterOdd = 1; counterOdd < 100; counterOdd ++) {
 		if (counterOdd % 2 != 0) {
 			console.log(counterOdd)
 		}
 	}
-
-	for (var counterEven = 2; counterEven < 101; counterEven ++)
+	for (var counterEven = 2; counterEven < 101; counterEven = counterEven + 1) {
 		if (counterEven % 2 == 0 && counterEven != 100) {
 			console.log(counterEven + " is an even number!")
 		} else if (counterEven == 100) {
 			console.log(counterEven + " is the biggest even number there is!")
 		}
-
+	}
+	/FIZZBUZZ/
+	for (var fB = 1; fB <= 100; fB ++) {
+		if ((fB % 3 == 0) && (fB % 5 == 0)) {
+			console.log(fB + " is a THREESIE-FIVESIE");
+		} else if (fB % 3 == 0) {
+			console.log(fB + " is a THREESIE");
+		} else if (fB % 5 == 0) {
+			console.log(fB + " is a FIVESIE")
+		} else {
+			console.log(fB + " is a heck of a boring number.");
+		}
+	}
+	
 	</script>
+
 </body>
 </html>

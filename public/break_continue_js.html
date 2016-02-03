@@ -1,0 +1,44 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>Break Continue</title>
+</head>
+<body>
+	<script>
+	var rando = Math.floor((Math.random()*50))
+	if (rando % 2 == 0) {
+		rando = rando + 1;
+	}
+	for (var i = 1; i < 50; i ++) {
+		if (i == rando) {
+			console.log(i + ". No comment.")
+		} else if (i % 2 != 0) {
+			console.log(i + " is so odd.")
+		}
+	}
+	var i2 = 2
+	do {
+		rando2 = Math.floor((Math.random()*50))
+		} while (rando2 % 2 != 0);
+
+	// for (var i2 = 2; i2 < 51; i2 ++) {
+		// if (i2 == rando2) {
+		//	console.log(i2 + ". YIKES!")
+		// } else if (i2 % 2 == 0) {
+		// 	console.log(i2 + " is so even.")
+		// }
+	// }
+
+	for (var i2 = 2; i2 <= 50; i2 ++) {
+		if (i2 % 2 != 0) {
+			continue;
+		} else if (i2 == rando2) {
+			console.log("Yikes! Skipping number " + i2 + ".")
+		} else {console.log(i2 + " is an even number.")}
+	}
+
+
+	</script>
+
+</body>
+</html>

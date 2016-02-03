@@ -1,0 +1,20 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>Iterating Arrays</title>
+</head>
+<body>
+	<script>
+	(function() {
+		var slimeNames = ["slime", "sludge", "muck", "grime", "goop", "slop", "plop", "grease", "mire", "filth", "gunk", "pure gunk", "what-a-mess", "horriblejuice", "slough syrup", "mystery liquid", "the bad stuff"]
+		console.log(slimeNames.length)
+		for (s = 0; s <= (slimeNames.length - 1); s ++)
+		console.log("I love " + slimeNames[s] + ". It's number " + (s + 1) + " on my list.")	
+		//put more succinctly
+		slimeNames.forEach(function (element, index, array) {
+			console.log("The slime ranked number " + (index + 1) + " is " + element + ".");
+		});
+	})();
+	</script>
+</body>
+</html>

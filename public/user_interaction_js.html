@@ -1,0 +1,77 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>User Interaction</title>
+</head>
+<body>
+<h1><em>WELCOME TO....................</em></h1>
+	<img src="http://pizzatown.devhub.com/img/upload/pizzatown-logo__.jpg" height="50%" >
+
+	<script>
+"use strict"
+function numCheck(numCheck1) {
+	if (isNaN(numCheck1)) {
+		alert("I know a lot of numbers, and that's not one of them...");
+		return false;
+	} else {
+		return true;
+	}
+}
+function pizzaJudgment(amount) {
+	if (amount < 4) {
+		alert("That's pathetic. Eat more.");
+	} else if (amount < 20) {
+		alert("That's more like it. But don't give up!");
+		} else {
+			alert("You truly are a pizza maven.")
+		}
+	}
+var yourName;
+do {
+	var yourName = prompt("What is your name?");
+	if (!yourName) {alert("PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE ")};
+	if (yourName) {yourName = yourName.trim()}
+} while (!yourName || yourName == null);
+console.log(yourName);
+
+
+alert("Hello, " + yourName + "! I hope you are well? Click OK if you are not at the end of your proverbial rope.")
+
+// todo: Show an alert message that welcomes the user based on their input.
+
+// todo: Ask the user if they like pizza.
+var pizz = prompt("Yes or no: Do you like the pizz?");
+console.log(pizz);
+if (pizz == "yes") {
+	alert("hell ya pizz boi");
+} else {
+	alert("Please, leave. You're are not welcome here.");
+	alert("I will punish your poor taste with an INFINITE LOOP.");
+}
+
+if (pizz != "yes") {
+	var pizz = prompt("I'm going to ask you one more time. Do you like pizza? Answer carefully.");
+
+}
+if (pizz != "yes") {
+	do {alert("I am so sorry")}
+	while (pizz != "yes");
+};
+var pizzaAmt;
+if (pizz == "yes") {
+	do {
+		var pizzaAmt = prompt("How many slices have you had today?");
+		if (pizzaAmt) {
+			pizzaAmt = pizzaAmt.trim()
+		}
+		if (!pizzaAmt) {alert("Come on, you can tell me anything. I'm your pizzadaddy")};
+		numCheck(pizzaAmt)
+	} while (!pizzaAmt || pizzaAmt == null || isNaN(pizzaAmt));
+	console.log(pizzaAmt);
+}
+pizzaJudgment(pizzaAmt);
+
+
+	</script>
+</body>
+</html>
