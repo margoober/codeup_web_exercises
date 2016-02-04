@@ -54,9 +54,7 @@
 			}
 			]
 		console.log(books);
-		var booksNew = books.title.sort();
-
-		booksNew.forEach(function (element, index, array) {
+		books.forEach(function (element, index, array) {
 			console.log("Book #" + (index + 1) + " is " + "'" + element.title + "'" + ".")
 			if (element.year > 1950) {
 				console.log("It was written by " + element.authorFull + " in " + element.year + ".");
@@ -66,7 +64,6 @@
 			console.log("This book was written " +(2016 - element.year) + " years ago! That's "+ (((2016 - element.year)) / 24).toFixed(2) +" times my age!");
 		    console.log("_________________________");
 		})
-
 		//_________________________
 	})();
 	</script>
