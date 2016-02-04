@@ -1,0 +1,74 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>JSON intro</title>
+</head>
+<body>
+	<script>
+	(function() {
+		//_________________________
+		// todo:
+		// Create an array of objects that represent books.
+		var books = [
+			{
+				"title" : "The Moviegoer",
+				"authorFull" : "Walker Percy",
+				"authorFirst" : "Walker",
+				"authorLast:" : "Percy",
+				"year" : "1961"
+			},
+			{
+				"title" : "Veronica",
+				"authorFull" : "Mary Gaitskill",
+				"authorFirst" : "Mary",
+				"authorLast:" : "Gaitskill",
+				"year" : "2007"
+			},
+			{
+				"title" : "Герой Нашего Времени",
+				"authorFull" : "Михайл Лермонтов",
+				"authorFirst" : "Михайл",
+				"authorLast:" : "Лермонтов",
+				"year" : "1839"
+			},
+			{
+				"title" : "Being and Time",
+				"authorFull" : "Martin Heidegger",
+				"authorFirst" : "Martin",
+				"authorLast:" : "Heidegger",
+				"year" : "1927"
+			},
+			{
+				"title" : "Either/Or",
+				"authorFull" : "Soren Kierkegaard",
+				"authorFirst" : "Soren",
+				"authorLast:" : "Kierkegaard",
+				"year" : "1843"
+			},
+			{
+				"title" : "Der Zauberberg",
+				"authorFull" : "Thomas Mann",
+				"authorFirst" : "Thomas",
+				"authorLast:" : "Mann",
+				"year" : "1924"
+			}
+			]
+		console.log(books);
+		var booksNew = books.title.sort();
+
+		booksNew.forEach(function (element, index, array) {
+			console.log("Book #" + (index + 1) + " is " + "'" + element.title + "'" + ".")
+			if (element.year > 1950) {
+				console.log("It was written by " + element.authorFull + " in " + element.year + ".");
+			} else {
+				console.log("It was written by " + element.authorFull + " waaaaaay back in " + element.year + ".");
+			};
+			console.log("This book was written " +(2016 - element.year) + " years ago! That's "+ (((2016 - element.year)) / 24).toFixed(2) +" times my age!");
+		    console.log("_________________________");
+		})
+
+		//_________________________
+	})();
+	</script>
+</body>
+</html>

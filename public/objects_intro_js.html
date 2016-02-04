@@ -22,8 +22,12 @@
 			alert("One of " + this.firstName + " " + this.lastName + "'s favorite bands is " + person.favoriteBands[rand] + ".")
 		};
 		console.log(person.randoBands())
-		console.log("All of her favorite bands are " +
-			person.favoriteBands.join(", "))
+		person.allFaves = function() {
+		this.favoriteBands.pop("Stereolab");
+		alert("All of " + this.firstName + " " + this.lastName + "'s favorite bands are " +
+			this.favoriteBands.join(", ") + ", and Stereolab.")
+		};
+		person.allFaves()
 		//_________
 	})();
 	</script>

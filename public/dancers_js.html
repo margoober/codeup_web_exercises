@@ -1,0 +1,46 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>Iterating Arrays</title>
+</head>
+<body>
+	<script>
+	(function() {
+		//_________________________
+		var танец = {
+			moves: ["mashed картошка", "monster mash", "detroit пимп", "heel click"],
+			dancers: ["Майкал Джаксон", "Райан Орсингер", "Джеймз Браун"],
+			темпо: "150 бпм",
+			performance: function () {
+				return this.getRandomDancer() + " does the " + this.getRandomMove() + " at " + this.tempo + "!";
+			},
+			getRandomDancer: function() {
+				var random_dancer_index = Math.floor(Math.random() * this.dancers.length);
+				return this.dancers[random_dancer_index];
+			}
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		//_________________________
+	})();
+	</script>
+</body>
+</html>
