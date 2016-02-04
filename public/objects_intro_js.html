@@ -1,0 +1,31 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>Objects Intro</title>
+</head>
+<body>
+	<script>
+	(function() {
+		//_________
+		var person = {
+		"lastName": "McMahon",
+		"firstName": "Margot",
+		"favoriteBands": ["Beat Happening", "Broadcast", "Yo La Tengo", "Leonard Cohen", "The Cure", "Stereolab"]
+		};
+		var rand = Math.floor((Math.random() * 6));
+		console.log(person);
+		person.sayHello = function() {
+			alert("Hello, " + this.firstName + " " + this.lastName + "!");
+		};
+		console.log(person.sayHello());
+		person.randoBands = function() {
+			alert("One of " + this.firstName + " " + this.lastName + "'s favorite bands is " + person.favoriteBands[rand] + ".")
+		};
+		console.log(person.randoBands())
+		console.log("All of her favorite bands are " +
+			person.favoriteBands.join(", "))
+		//_________
+	})();
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>State Array into String</title>
+</head>
+<body>
+	<script>
+	(function() {
+		//-----------
+		var stateList = ["Alabama", "Alaska", "Arizona", "Arkansas", "Arizona", "Wyoming"];
+		function stringify(array, del) {
+			var string = "";
+
+			array.forEach(function(element, index) {
+				if (string !="") {
+					string = string + del;
+				}
+				string = string + element;
+				//console.log(string); right here would console.log(each step of the forEach process!!!!!)
+			});
+		return string;
+		}
+		var result = stringify(stateList, ", ");
+		console.log(result);
+		//___________
+	})();
+	</script>
+</body>
+</html>
