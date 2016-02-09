@@ -892,8 +892,8 @@ var arrayOfProfiles = [
 		arrayOfProfiles.forEach(function (element, index, array) {
 			sumAge = sumAge + element.age
 		})
-		var averageAge = (sumAge / arrayOfProfiles.length).toFixed(2)
-		report.averageAge = averageAge + " years old"
+		report.averageAge = parseFloat((sumAge / arrayOfProfiles.length).toFixed(2))
+		//report.averageAge = averageAge + " years old"
 //end averageAge
 //begin masCount and femCount
 		var masCount = 0;

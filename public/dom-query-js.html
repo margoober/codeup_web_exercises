@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+    <h1 id="main-header">Hello World!</h1>
+    <ul>
+        <li data-dbid="1">Item 1</li>
+        <li data-dbid="2">Item 2</li>
+        <li data-dbid="3">Item 3</li>
+        <li data-dbid="4">Item 4</li>
+        <li data-dbid="5">Item 5</li>
+    </ul>
+    <h2 id="sub-header">Hello Again.</h2>
+    <p class="sub-paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <button id="button1" data-btn="1">Change Title!</button>
+    <button id ="button2" data-btn="2">Ya Blue It!</button>
+    <button id ="button3" data-btn="3">Stripe It!</button>
+    <button id ="button4" data-btn="4">Accomplish the Mission.</button>
+    <br>
+    <br>
+    <button id="button5" data-btn="5">Undo Title</button>
+    <button id ="button6" data-btn="6">Unblue It!</button>
+    <button id ="button7" data-btn="7">Unstripe It!</button>
+    <button id ="button8" data-btn="8">Unaccomplish the Mission.</button>
+    <br>
+    <br>
+    <button id ="button8" data-btn="8">Mystery Button</button>
+
+    <script>
+        "use strict";
+        (function() {
+            // TODO: Uncomment next line and get the main header element by id
+            var mainHeader = document.getElementById("main-header");
+            function coolify () {
+                mainHeader.innerHTML = "JavaScript is Cool"
+            }
+            function undoTitle () {
+                mainHeader.innerHTML = "Hello World!"
+            };
+            // TODO: Uncomment the next line and get the sub header element by id
+            var subHeader = document.getElementById("sub-header");
+            // TODO: Set the text color of subHeader to blue
+            function blueify () {
+                subHeader.style.color = "blue";
+            }
+            function unblueify () {
+                subHeader.style.color = "black";
+            }
+            // TODO: Uncomment the next line and get all list items
+            var listItems = document.getElementsByTagName("li");
+            // TODO: Set text color on every other list item to grey
+            function stripes () {
+            for (var i = 0; i < listItems.length; i ++)
+                if (i % 2 != 0) {
+                   listItems[i].style.backgroundColor = "#9BD7D5"
+                } else {
+                    listItems[i].style.backgroundColor = "#FF7260"
+                }
+            }
+            function unstripe () {
+                for (var i = 0; i < listItems.length; i ++)
+                if (i % 2 != 0) {
+                   listItems[i].style.backgroundColor = "white"
+                } else {
+                    listItems[i].style.backgroundColor = "white"
+                }
+            }
+            // TODO: Set text color of li with dbid = 1 to blue
+            for (var i = 0; i < listItems.length; i ++)
+                if (listItems[i].getAttribute("data-dbid") == 1) {
+                    listItems[i].style.color = "blue"
+                };
+            // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+            var subParagraphs = document.getElementsByClassName("sub-paragraph");
+            // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+            function missionAccomplished () {
+            for (var i = 0; i < subParagraphs.length; i ++)
+                if (i == 0) {
+                    subParagraphs[i].innerText = "Misson Accomplished!"
+                };
+            }
+            function unAccomplish () {
+                for (var i = 0; i < subParagraphs.length; i ++)
+                if (i == 0) {
+                    subParagraphs[i].innerText = "Misson Unaccomplished!"
+                };
+            }
+            function doNothing () {
+                alert("This button doesn't do anything.");
+            };
+            //____ BUTTONS
+            var buttons = document.getElementsByTagName("button");
+            
+            var btn1 = document.getElementById("button1");
+            btn1.addEventListener("click", coolify, false);
+            
+            for (var i = 0; i < buttons.length; i ++) {
+                if (i == 1) {
+                    buttons[i].addEventListener("click", blueify, false);
+                } else if (i == 2) {
+                    buttons[i].addEventListener("click", stripes, false);
+                } else if (i == 3) {
+                    buttons[i].addEventListener("click", missionAccomplished, false);
+                } else if (i == 4) {
+                    buttons[i].addEventListener("click", undoTitle, false);
+                } else if (i == 5) {
+                    buttons[i].addEventListener("click", unblueify, false);
+                } else if (i == 6) {
+                    buttons[i].addEventListener("click", unstripe, false);
+                } else if (i == 7) {
+                    buttons[i].addEventListener("click", unAccomplish, false);
+                } else if (i > 7) {
+                    buttons[i].addEventListener("click", doNothing, false);
+                }
+            };
+
+
+            //____ END BUTTONS
+        })();
+    </script>
+</body>
+</html>

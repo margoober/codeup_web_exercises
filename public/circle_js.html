@@ -1,0 +1,29 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<title>Iterating Arrays</title>
+</head>
+<body>
+	<script>
+	(function() {
+		//_________________________
+		var circle = {
+			radius: 3,
+			getArea: function(radius) {
+				return(Math.PI + Math.pow(this.radius, 2));
+			}, // comma denotes end of property in object "circle"
+			logInfo: function (round) {
+				if (round == true) {
+					console.log('Rounded area of a circle with radius ' + this.radius + ' units is ' + Math.round(circle.getArea(this.radius)) + " square units");
+				} else {
+					console.log("Raw area of a circle with radius " + this.radius + " units is " + circle.getArea(this.radius) + " square units");
+				}
+			}
+		}
+		circle.logInfo(false);
+		circle.logInfo(true);
+		//_________________________
+	})();
+	</script>
+</body>
+</html>
