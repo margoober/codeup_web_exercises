@@ -53,7 +53,7 @@
             };
         }
 
-        //var target = document.getElementById("element id from top of page");
+        //var target = document.getElementById/ClassName/TagName("element id from top of page");
         //target.addEventListener(event trigger, function to be called, false)
 
         var defuser = document.getElementById('defuser');

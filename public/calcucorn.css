@@ -1,0 +1,66 @@
+h1 {
+	color: midnightblue;
+	text-align: center;
+}
+#display {
+	background-color: midnightblue;
+}
+
+#keypad {
+	background-color: papayawhip;
+}
+button {
+	background-color: goldenrod; /* Green */
+    border: 1px solid black;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    color: midnightblue;
+}
+#btnEquals {
+	background-color: #4CAF50; /* Green */
+    border: 1px solid black;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#btnEquals:hover {
+	background-color: blue;
+}
+.op {
+	background-color: coral;
+    border: 1px solid black;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.op:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+#btnClear {
+	background-color: fuchsia;
+    border: 1px solid black;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#btnClear:hover {
+	background-color: #4CAF50;
+    color: white;
+}
+.numb:hover {
+	background-color: #4CAF50;
+}
