@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div to hold map -->
+    <div id="map-canvas"></div>
+
+    <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6cKc2JLBdOXBF-fpxegQlYOWlnjirbBk"></script>
+
+    <!-- Script to show address on map -->
+    <script type="text/javascript">
+    (function() {
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 18,
+            mapTypeId: google.maps.MapTypeId.TERRAIN,
+            center: {
+                lat:  29.4284595,
+                lng: -98.492433
+            }
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var addressLookerUpper = new google.maps.Geocoder();
+        var codeupAddy = "600 Navarro, San Antonio, TX";
+        //in the geocoder object there is a method called geocode: geocoder.geocode().
+        addressLookerUpper.geocode({address: codeupAddy}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                console.log(results);
+                map.setCenter(results[0].geometry.location); //setCenter() takes in lat. and long., which are built into location
+            };
+                    var codeup = {
+            lat: 29.428459,
+            lng: -98.492433
+        }
+            var marker = new google.maps.Marker({
+                "map": map,
+                "position": results[0].geometry.location
+
+        });
+            var codeupInfo = new google.maps.InfoWindow({
+                content: "Hello there!"
+            });
+            codeupInfo.open(map, marker);
+
+        });
+    })();
+    </script>
+</body>

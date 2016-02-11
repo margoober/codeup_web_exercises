@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guy Fieri's Chophouse Atlantic City</title>
+	<style type="text/css">
+		#map-canvas {
+			width: 770px;
+            height: 481px;
+		}
+	</style>
+</head>
+<body>
+
+    <!-- div to hold map -->
+    <div id="map-canvas"></div>
+
+    <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhvC6oOWdD71L-PL5sQycP5Ly0VqgC21Y"></script>
+
+    <!-- Script to show address on map -->
+    <script type="text/javascript">
+    (function() {
+        "use strict";
+
+        // Set our map options
+        //1900 Pacific Ave, Atlantic City, NJ 08401, USA
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.TERRAIN,
+            center: {
+                lat:  39.35728399999999,
+                lng: -74.433625
+            }
+        };
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        var addressLookerUpper = new google.maps.Geocoder();
+        var guysPlace = "1900 Pacific Ave, Atlantic City, NJ 08401, USA";
+        //addressLookerUpper is the geocoder object. there is a geocode() method inside it.
+        addressLookerUpper.geocode({address: guysPlace}, function (results, status) {
+        	if (status == google.maps.GeocoderStatus.OK) /* this verifies that the address is real */ {
+        		console.log("The results are:");
+        		console.log(results);
+        		map.setCenter(results[0].geometry.location);
+
+        	};
+        	var guysPin = {
+        		lat:  39.35728399999999,
+                lng: -74.433625
+        	}
+        	var marker = new google.maps.Marker({
+        		"map": map,
+        		"position": results[0].geometry.location
+        	});
+        	var guysInfo = new google.maps.InfoWindow({
+        		content: "<strong>Guy Fieri's Chophouse.</strong><br><em>It is the proverbial 'real deal'.</em><br><IMG BORDER='0' ALIGN='Left' height='10%' SRC='hotdog.png'>"
+        	});
+        	guysInfo.open(map, marker);
+        });
+
+	//________________________________________________
+})();
+    </script>
+</body>
+</html>

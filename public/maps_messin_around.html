@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maps Maps</title>
+	<style type="text/css">
+		#map-canvas {
+			width: 770px;
+			height: 481px;
+		}
+	</style>
+</head>
+<body>
+	<!--div to hold map -->
+	<div id="map-canvas"></div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR API KEY HERE"></script>
+	<script type="text/javascript">
+	(function(){
+		"use strict";
+		var mapOptions = {
+			zoom: 15,
+			mapTypeId:google.maps.MapTypeId.TERRAIN,
+			center: {
+				lat: 39.35728399999999,
+				lng: -74.433625
+			}
+		};
+		//render the map
+		var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+		var addressLookerUpper = new google.maps.Geocoder();
+		var guysPlace = "1900 Pacific Ave, Atlantic City, NJ 08401, USA";
+		addressLookerUpper.geocode({address: guysPlace}, function (results, status) {
+			if status == google.maps.GeocoderStatus.OK {
+				console.log(results);
+				map.setCenter(results[0].geometry.location);
+			};
+		var guysPin = {
+			lat:  39.35728399999999,
+            lng: -74.433625
+		};
+		var marker = new google.maps.Marker({
+			"map": map,
+			"position": results[0].geometry.location
+		});
+		var guysInfo = new google.maps.InfoWindow({
+			content: "The Real Deal."
+		});
+		guysInfo.open(map, marker);
+		});
+
+	})();
+	</script>
+</body>
+</html>
