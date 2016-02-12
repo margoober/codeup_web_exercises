@@ -1,33 +1,74 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>JQuery</title>
+    <title>Example jQuery Page</title>
+    <style>
+        .important {
+            text-align: center;
+        }
+    </style>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        "use strict";
+
+        $(document).ready(function() {
+            $('.important').css({
+				"font-family": "Papyrus, fantasy",
+				"font-size": "20px",
+				"font-style": "normal",
+				"font-variant": "normal",
+				"font-weight": "400",
+				"line-height": "30.5714px",
+            	'background-color': '#008B8B',
+            	'color': '#FF8000',
+				"border": "3px dotted blue",
+				"border-radius": "5px"
+			});
+            $('.not-important').css({
+            	'background-color': '#FF8000',
+				'color': '#008B8B'
+			});
+			$(".bod, #third").css({
+				"border": "5px solid green",
+				"border-radius": "10px"
+			});
+			$("li").css({
+				"border": "1px dotted #008B8B",
+				"background-color": "goldenrod"
+			});
+			$("em").css({
+				"background-color": "blue",
+				"border-radius": "10px"
+			});
+			$("h2, h4").css({
+				"font-family": "Franklin Gothic Medium",
+				"background-color": "#FD0E35",
+				"border-radius": "15px"
+			})
+        });
+    </script>
 </head>
 <body>
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	</script>
-	<script>
-	$(document).ready(function(){
-		var contents = $("#spisokPrichin").html();
-		alert(contents);
-	});
-	$(document).ready(function(){
-		var contents = $("#sand").html();
-		alert(contents);
-	});
-	</script>
-
-	<h1>Reasons To Go For A Swim</h1>
-		<p>Let's get wet!</p>
-	<div id="spisokPrichin">
-	<ul>
-	 	<li>50% chance there are salamander</li>
-		<div id="sand">
-			<li>Better than dry sand</li>
-		</div>
-		<li>Bubbles: Ain't Nothin' To It</li>
-	</ul>
-	</div>
-
+    <h1>Should You Be Taking A Dip?</h1>
+    <div class="important">
+        <h3>NOTICE</h3>
+        <p>This is an important message! You Should Be Swimming!</p>
+    </div>
+    <div class="bod">
+    <div class="not-important">
+        <h2>Why Should You Be Swimming?</h2>
+        <p>You should be with the salamanders, not on dry land!<br><br><span class="important">There are salamanders waiting for you.</span><br><br>Come join them in the water!</p>
+    </div>
+    </div>
+    <p class="important">They might crown you queen or king!</p>
+    <h2>A Slippery Recap. Salamanders:</h2>
+    <ul id="recap">
+    	<li>You like 'em</li>
+    	<li>You love 'em</li>
+    	<li id="third">You <em>need</em> 'em</li>
+    	<li>Isn't it time you asked yourself, <em>"Why So Dry?</em></li>
+    	<li>Slide on in!</li>
+    </ul>
+    <h4>Salamander Approved!</h4>
 </body>
 </html>
