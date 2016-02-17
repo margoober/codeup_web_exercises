@@ -1,0 +1,55 @@
+<!DOCTYPE = html>
+<html>
+<head>
+	<title>Fish</title>
+	<link rel="stylesheet" type="text/css" href="/fish.css">
+</head>
+<body>
+	<p>
+        <button id="btn-up">Up</button>
+        <br>
+        <button id="btn-left">Left</button>
+        <button id="btn-right">Right</button>
+        <br>
+        <button id="btn-down">Down</button>
+    </p>
+	<div id="whole">
+	<div id="fish">
+	  <div id="fishbody">
+	    <div id="eye">
+	      <div class="pupil"></div>
+	    </div>
+	  </div>
+	  <div class="fin"></div>
+	  <div class="fin fin-bottom"></div>
+</div>
+</div>
+<div class="bubbles bubble-1"></div>
+<div class="bubbles bubble-5"></div>
+<div class="bubbles bubble-2"></div>
+<div class="bubbles bubble-6"></div>
+<div class="bubbles bubble-3"></div>
+<div class="bubbles bubble-7"></div>
+<div class="bubbles bubble-4"></div>
+<div class="bubbles bubble-8"></div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        "use strict";
+
+
+        $("#btn-up").click(function(){
+        	$("#whole").animate({
+        		top: "-=100px"
+        	});
+        });
+
+
+
+
+
+
+    });
+    </script>
+</body>
+</html>

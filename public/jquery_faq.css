@@ -1,0 +1,7 @@
+.invisible {
+    text-align: left;
+    background-color: goldenrod;
+}
+.highlighted {
+    background-color: #FF0;
+}

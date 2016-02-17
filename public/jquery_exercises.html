@@ -12,6 +12,12 @@
         "use strict";
 
         $(document).ready(function() {
+        	$('h1').click(function() {
+            $(this).css('background-color', '#FF0');
+            });
+            $('em').click(function() {
+            $(this).css('font-family', 'Papyrus');
+            });
             $('.important').css({
 				"font-family": "Papyrus, fantasy",
 				"font-size": "20px",
@@ -34,17 +40,41 @@
 			});
 			$("li").css({
 				"border": "1px dotted #008B8B",
-				"background-color": "goldenrod"
+				"background-color": "goldenrod",
+				"line-height": "30.5714px"
 			});
 			$("em").css({
 				"background-color": "blue",
-				"border-radius": "10px"
+				"border": "5px solid green",
+				"border-radius": "10px",
+				"line-height": "30.5714px"
 			});
 			$("h2, h4").css({
 				"font-family": "Franklin Gothic Medium",
 				"background-color": "#FD0E35",
 				"border-radius": "15px"
 			})
+			$( "li" ).hover(
+			function() {
+			$(this).append($("<span> ***</span>"));
+			}, function() {
+			$(this).find( "span:last" ).remove();
+			});
+			$("h1").hover(function() {
+			  $(this).fadeOut(1000);
+			  $(this).fadeIn(5000);
+			});
+        });
+
+$(document).ready(function() {
+            $('h1').hover(
+                function() {
+                    $(this).css('background-color', '#FF0');
+                },
+                function() {
+                    $(this).css('background-color', '#FFF');
+                }
+            );
         });
     </script>
 </head>
@@ -61,7 +91,7 @@
     </div>
     </div>
     <p class="important">They might crown you queen or king!</p>
-    <h2>A Slippery Recap. Salamanders:</h2>
+    <h2>A Slippery Recap. <em>Salamanders:</em></h2>
     <ul id="recap">
     	<li>You like 'em</li>
     	<li>You love 'em</li>

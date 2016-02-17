@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Map</title>
+    <link rel="stylesheet" type="text/css" href="weather_map.css">
+</head>
+<body>
+	<div class="dropdown">
+		<button onclick="myFunction()" class="dropbtn">Pick Your City</button>
+		<div id="myDropdown" class="dropdown-content">
+			<a href="#">San Antonio</a>
+			<a href="#">Austin</a>
+			<a href="#">Houston</a>
+			<a href="#">Dallas</a>
+		</div>
+	</div>
+
+	<div id="place"></div>
+	<p>better be</p>
+	<div id="weather"></div>
+	<p>today.</p>
+<div id="tornies">
+	<img id="tornudo" src="http://images.clipartpanda.com/twister-clipart-tornado-clip-art-tornado-clip-art-14.jpg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>	<img id="tornudo" src="http://images.clipartpanda.com/twister-clipart-tornado-clip-art-tornado-clip-art-14.jpg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>	<img id="tornudo" src="http://images.clipartpanda.com/twister-clipart-tornado-clip-art-tornado-clip-art-14.jpg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script
+>
+	<p>It will be</p>
+	<div id="temp"></div>
+	<p>degrees today.</p>
+</div>
+<script>
+"use strict";
+(function() {
+$.get("http://api.openweathermap.org/data/2.5/weather", {
+    APPID: "5d836ac820b69c1fc34d0e5be1d3d7b9",
+    q:     "San Antonio, TX"
+}).done(function(data){
+	console.log(data);
+	var htmlName = "<h2>" + data.name + "</h2>";
+	var htmlDescription = "<h2>" + "fucking " + data.weather[0].main + "</h2>";
+	var htmlTemp = "<h2>" + ((data.main.temp - 273.15) * 1.8 + 32).toFixed(0) + "</h2>";
+	$("#place").append(htmlName);
+	$("#weather").append(htmlDescription);
+	$("#temp").append(htmlTemp);
+});
+
+//DROPDOWN JS_____________________________________
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+//_____________________________________
+
+
+
+})();
+</script>
+</body>
+</html>

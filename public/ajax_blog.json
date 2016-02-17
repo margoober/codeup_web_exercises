@@ -1,0 +1,34 @@
+[
+    {
+        "title": "First Blog Post",
+        "content": "Today was rough. I stepped in 6 puddles and by the time I got home from work, my socks were SOAKED. It was my last pair :(",
+        "categories":[
+            "Hell",
+            "help",
+            "bad day"
+        ],
+        "date": "January 25, 2015"
+    }, {
+        "title": "A Very Bad Day",
+        "content": "The Good Lorde did not smile down upon me today. I had the great misfortune of being robbed of my wallet, phone, and clothes by a group of small, vile children-boys. Never show your face to the world again, old man, they told me each time as they rubbed my face into 6 different filth puddles. Kids these days!",
+        "categories": [
+            "crime",
+            "assault",
+            "bullies",
+            "Why, God?"
+        ],
+        "date": "February 14, 2015"
+    }, {
+        "title": "No Reprieve",
+        "content": "I've had it. Today my garbage son Jaidynne smelted my brand new luxury Saab into a giant trophy that he engraved with 'I'm a sad dad. I don't cry; I Saab. Why did Karen leave me with such a garbage child? Why must my son torment me?",
+        "categories": [
+            "garbage son",
+            "sad",
+            "saab",
+            "sob",
+            "hell",
+            "kids these days"
+        ],
+        "date": "February 28, 2015"
+    }
+]

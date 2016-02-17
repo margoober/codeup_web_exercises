@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animate</title>
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0;
+        }
+
+        #btn-animate {
+            margin: 15px;
+        }
+
+        #animate-box {
+            background-color: midnightblue;
+            height: 70px;
+            margin: 15px;
+            position: relative;
+            width: 400px;
+            border-radius: 40px
+        }
+        body {
+  background-color: #42a1c6;
+}
+
+/* Franklin's Container */
+#fish {
+  width: 150px;
+  height: 100px; 
+}
+
+/* Franklin */
+.fish-body {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 40px;
+  background-color: goldenrod;
+  border-radius: 50%;
+  width: 150px; 
+  height: 100px;
+}
+
+.eye {
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 20px;
+  z-index: 1;
+  background-color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.pupil {
+  position: absolute;
+  z-index: 2;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: black;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+.fin {
+  margin-top: -100px; 
+  background-color: goldenrod;
+  border-radius: 50%;
+  transform: rotate(40deg);
+  width: 80px;
+  height: 50px;
+}
+
+.fin-bottom {
+  margin-top: -10px;
+  transform: rotate(-40deg);
+}
+
+/* Bubbles */
+.bubbles {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  margin-right: 50px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: .50;
+  width: 40px;
+  height: 40px;
+  animation: up 4s infinite;
+}
+
+.bubble-2 {
+  left: 350px;
+  animation: up 2s infinite;
+}
+
+.bubble-3 {
+  left: 750px;
+  opacity: .30;
+  animation: up 5s infinite;
+}
+
+.bubble-4 {
+  left: 1150px;
+  animation: up 6s infinite;
+}
+
+.bubble-5 {
+  left: 50px;
+  animation: up 5s infinite;
+}
+
+.bubble-6 {
+  left: 300px;
+  opacity: .30;
+  animation: up 3s infinite;
+}
+
+.bubble-7 {
+  left: 670px;
+  animation: up 4s infinite;
+}
+
+.bubble-8 {
+  left: 1050px;
+  opacity: .30;
+  animation: up 3s infinite;
+}
+
+/* Swim Animation */
+
+/* Bubbles Animation */
+@keyframes up {
+  100% {
+    transform: translateY(-800px);
+  }
+}
+
+    </style>
+</head>
+<body>
+    <p>
+        <button id="btn-up">Up</button>
+        <br>
+        <button id="btn-left">Left</button>
+        <button id="btn-right">Right</button>
+        <br>
+        <button id="btn-down">Down</button>
+        <br>
+        <button id="btn-scale">Scale It</button>
+        <button id="btn-hide">Hide It</button>
+        <button id="btn-show">Show It</button>
+        <button id="btn-all">Animate All</button>
+    </p>
+
+    <div id="animate-box"></div>
+
+    <div id="fish">
+        <div class="fish-body">
+            <div class="eye">
+                <div class="pupil"></div>
+            </div>
+        </div>
+        <div class="fin"></div>
+        <div class="fin fin-bottom"></div>
+    </div>
+
+<div class="bubbles bubble-1"></div>
+<div class="bubbles bubble-5"></div>
+<div class="bubbles bubble-2"></div>
+<div class="bubbles bubble-6"></div>
+<div class="bubbles bubble-3"></div>
+<div class="bubbles bubble-7"></div>
+<div class="bubbles bubble-4"></div>
+<div class="bubbles bubble-8"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        "use strict";
+        
+        $("#btn-up").click(function(){
+            $("#fish").animate({
+                top: "-=100px"
+            });
+        });
+        
+        $("#btn-left").click(function(){
+            $("#fish").animate({
+                right: "+=100px"
+            });
+        });
+
+        $("#btn-right").click(function(){
+            $("#fish").animate({
+                right: "-=100px"
+            });
+        });
+        $("#btn-down").click(function(){
+            $("#fish").animate({
+                top: "+=100px"
+            });
+        });
+
+        // TODO: "Scale It" should expand the box width by 50%
+        $("#btn-scale").click(function(){
+            $("#animate-box").animate({
+                width: "50%"
+            });
+        });
+
+        // TODO: "Hide It" should use opacity to make the box invisible
+        $("#btn-hide").click(function(){
+            $("#animate-box").animate({
+                opacity: "0"
+            });
+        });
+
+
+        // TODO: "Show It" should make the box appear
+        $("#btn-show").click(function(){
+            $("#animate-box").animate({
+                opacity: "1"
+            });
+        });
+
+        // TODO: "Animate All" should use an animation stack to:
+        //      1) Move and scale the box simultaneously
+        //      2) Hide the box
+        //      3) Reset the box back to its original position and opacity
+        $("#btn-all").click(function(){
+            $("#animate-box").animate({
+                width: "800px",
+                height:"140px"
+            }, 1000).animate({
+                right: "0px"
+            }, 1000).animate({
+                opacity: "0"
+            }, 100).animate({
+                right: "0px"
+            }, 1000).animate({
+                opacity: "1"
+            }, 1000).animate({
+                width: "400px",
+                height: "70px"
+            }, 1000);
+        });
+    });
+    </script>
+</body>
+</html>

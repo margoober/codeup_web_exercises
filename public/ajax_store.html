@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>Tools for Fools</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<button id="refresh">REFRESH</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+(function (){
+    function refreshAll(){
+        $.ajax("/data/inventory.json", {
+            type: "GET"
+        }).done(function(data){
+            console.log(data);
+            $("#products").html("");
+            data.forEach(function(element, index, array){
+                var contentString = "";
+                contentString += "<tr>";
+                contentString += "<td>" + element.title + "</td>";
+                contentString += "<td>" + element.quantity + "</td>";
+                contentString += "<td>" + element.price + "</td>";
+                contentString += "<td>" + element.categories + "</td>";
+                contentString += "</tr>";
+                $("#products").append(contentString);
+            });
+        }).fail(function(){
+            console.log("failt")
+        });
+    };
+    refreshAll()
+$("#refresh").click(function(){
+    refreshAll();
+    console.log("you refreshed!");
+});
+
+})();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE = html>
+<html>
+<head>
+	<title>AJAX Blog</title>
+	<link rel="stylesheet" type="text/css" href="ajax_blog.css">
+</head>
+<body>
+	<h1 id="header">AJAX Blog</h1>
+	<div id="posts">
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+<script>
+(function() {
+	//___________________________
+	$.ajax({
+		url: "/ajax_blog.json",
+		type: "GET"
+	}).done(function(data){
+		console.log(data);
+		data.forEach(function(element, index, array) {
+			var blogPost = "";
+			blogPost += "<div>";
+			blogPost += "<h2>" + element.title + "</h2>";
+			blogPost += "<h3>" + element.date + "</h3>";
+			blogPost += "<p>" + element.content + "</p>";
+			blogPost += "<p>" + element.categories + "</p>";
+			blogPost += "</div>";
+			$("#posts").append(blogPost);;
+		});
+	});
+	//___________________________
+})();
+</script>
+</body>
+</html>
+
+
