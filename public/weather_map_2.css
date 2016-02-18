@@ -1,0 +1,152 @@
+#pageTitle {
+	font-family: helvetica;
+	color: #0D4A5F;
+	font-size: 35px;
+	text-align: left;
+}
+
+#howAbout {
+	font-family: helvetica;
+	color: #0D4A5F;
+	font-size: 30px;
+	text-align: left;
+	font-style: bold;
+	text-indent: 0px
+}
+
+#weather {
+	font-family: helvetica;
+	color: #0D4A5F;
+	font-size: 45px;
+	text-align: left;
+	font-style: bold, italic;
+	text-indent: 0px
+}
+#buttonCity {
+	width: 70%;
+	text-align: center;
+	margin-left:auto; 
+    margin-right:auto;
+    border: none;
+}
+#buttonCity td {
+	border: none;
+	width: 50%;
+}
+
+#currentCity {
+	font-family: helvetica;
+	color: #0D4A5F;
+	border: none;
+	border-radius: 5px;
+	background-color: none;
+	font-size: 30px;
+	text-indent: 0px
+}
+#skyline {
+	border: 5px solid #EE6B33;
+	width: 100%;
+}
+
+#weatherTable {
+    border: 5px solid #0D4A5F;
+    border-radius: 10px;
+    border-collapse: collapse;
+    padding: 15px;
+    margin: 0px;
+    text-align: center;
+    margin-left:auto; 
+    margin-right:auto;
+    font-size: 20px;
+    font-family: helvetica
+}
+#weatherTable td {
+	padding: 30px;
+	background-color: #EE6B33;
+	color: #0D4A5F;
+	width: 150px;
+    height: 250px;
+    display: inline-block;
+    overflow: auto;
+}
+body {
+	background-color: #ABDEF1
+}
+.dayName {
+	font-style: italic;
+	font-size: 28px;
+}
+
+/* dropdown menu */
+.site-navigation {
+    display: block;
+    font-family: helvetica;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.site-navigation ul {
+  background: #0D4A5F;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.site-navigation li {
+    color: #fff;
+  background: #0D4A5F;
+    display: block;
+    float: left;
+    margin: 0 2px 0 0;
+    padding: 20px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid #EE6B33;
+}
+  
+.site-navigation li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.site-navigation li:hover {
+    @include transition(background, 0.2s);
+    background: #52a6df;
+    cursor: pointer;
+}
+
+.site-navigation ul li ul {
+	background: #0D4A5F;
+	visibility: hidden;
+	float: left;
+	min-width: 150px;
+	position: absolute;
+	transition: visibility 0.65s ease-in;
+	margin-top:12px;
+	left: 0;
+	z-index: 999;
+}
+
+.site-navigation ul li:hover > ul,
+.site-navigation ul li ul:hover {
+	visibility: visible;
+}
+
+.site-navigation ul li ul li {
+	clear: both;
+	padding: 5px 0 5px 18px;
+	width: 100%;
+
+}
+
+.site-navigation ul li ul li:hover {
+	background: #74b7e4;
+}
+.cities {
+	border-left: 2px solid #EE6B33;
+	border-right: 2px solid #EE6B33;
+	border-bottom: 2px solid #EE6B33;
+
+}
