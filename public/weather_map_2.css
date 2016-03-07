@@ -4,6 +4,17 @@
 	font-size: 35px;
 	text-align: left;
 }
+#topRow {
+	border: none;
+	text-align: center;
+	margin-left:auto; 
+    margin-right:auto;
+}
+#topRow td {
+	padding-left: 30px;
+	padding-right: 30px;
+	width: 70%;
+}
 
 #howAbout {
 	font-family: helvetica;
@@ -23,7 +34,7 @@
 	text-indent: 0px
 }
 #buttonCity {
-	width: 70%;
+	width: 60%;
 	text-align: center;
 	margin-left:auto; 
     margin-right:auto;
@@ -32,6 +43,7 @@
 #buttonCity td {
 	border: none;
 	width: 50%;
+	text-align: center
 }
 
 #currentCity {
@@ -40,14 +52,24 @@
 	border: none;
 	border-radius: 5px;
 	background-color: none;
-	font-size: 30px;
+	font-size: 50px;
 	text-indent: 0px
 }
 #skyline {
 	border: 5px solid #EE6B33;
-	width: 100%;
-}
+	width: 90%;
 
+}
+#map-canvas {
+            width: 313px;
+            height: 313px;
+            text-align: right;
+            border: 5px solid #EE6B33;
+            width: 90%;
+        }
+#bottomRow {
+	text-align: right
+}
 #weatherTable {
     border: 5px solid #0D4A5F;
     border-radius: 10px;
