@@ -1,8 +1,8 @@
 <?PHP
 session_start(); //always at the top!
-require 'functions.php';
-$username = isset($_POST['username']) ? $_POST['username'] : '';
-$password = isset($_POST['password']) ? $_POST['password'] : '';
+require_once 'functions.php';
+$username = inputHas('username') ? inputGet('username') : '';
+$password = inputHas('password') ? inputGet('password') : '';
 $realUsername = "margoober";
 $realPassword = "beanbrain";
 

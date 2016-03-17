@@ -1,7 +1,9 @@
 <?PHP
+require_once 'functions.php';
 function pageController(){
 	$data = [];
-	$data['counter'] = isset($_GET["counter"]) ? $_GET["counter"] : 0;
+	//$data['counter'] = isset($_GET["counter"]) ? $_GET["counter"] : 0;
+	$data['counter'] = inputHas('counter') ? escape(inputGet('counter')) : 0;
 	return $data;
 };
 extract(pageController());
