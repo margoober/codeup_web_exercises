@@ -1,0 +1,54 @@
+table {
+	width: 60%;
+	height: 300px;
+	border: 1px solid black
+}
+
+table td {
+	width: 100%;
+	height: 100%;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.parkImage {
+	width: 100%;
+	height: 100%;
+}
+
+
+#OlympicImage {
+	background-image: url('olympic.jpg');
+}
+
+#DenaliImage {
+	background-image: url('denali.jpg');
+}
+
+#Big-BendImage {
+	background-image: url('bigbend.jpg');
+}
+
+#Crater-LakeImage {
+	background-image: url('craterlake.jpg');
+}
+
+#Joshua-TreeImage {
+	background-image: url('joshuatree.jpg');
+}
+
+#Isle-RoyaleImage {
+	background-image: url('isleroyale.jpg');
+}
+
+#Black-Canyon-of-the-GunnisonImage {
+	background-image: url('blackcanyon.jpg');
+}
+
+#Guadelupe-MountainsImage {
+	background-image: url('guadelupemountains.jpg');
+}
+
+#Isle-RoyaleImage {
+	background-image: url('isleroyale.jpg');
+}

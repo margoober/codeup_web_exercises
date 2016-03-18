@@ -77,13 +77,10 @@ VALUES
 	166868
 )
 QUERY;
-echo "before exec insertion" . PHP_EOL;
 $connection->exec($insertion);
-echo "after exec insertion" . PHP_EOL;
-
 
 $stmt = $connection->query('SELECT * FROM national_parks');
-echo 'columnCount method: ' . $stmt->columnCount() . PHP_EOL;
-echo 'rowCount method: ' . $stmt->rowCount() . PHP_EOL;
+//echo 'columnCount method: ' . $stmt->columnCount() . PHP_EOL;
+//echo 'rowCount method: ' . $stmt->rowCount() . PHP_EOL;
 $national_parksArray =($connection->query('SELECT * FROM national_parks')->fetchAll(PDO::FETCH_ASSOC));
-print_r($national_parksArray);
+//print_r($national_parksArray);

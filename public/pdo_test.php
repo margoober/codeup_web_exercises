@@ -21,9 +21,9 @@ $sql = <<<QUERY
 QUERY;
 $connection->exec($sql);
 
-echo "Table teams created" . PHP_EOL;
+echo "teams table created" . PHP_EOL;
 
-$insert = 'INSERT INTO teams (name) VALUES ("The Bubs")';
+$insert = 'INSERT INTO teams (name) VALUES ("The Skeletons")';
 $connection->exec($insert);
 $id = $connection->lastInsertId();
 echo "\n1 row inserted with ID $id\n";
