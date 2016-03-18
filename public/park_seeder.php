@@ -7,9 +7,10 @@ define('DB_HOST', '127.0.0.1');
 
 require_once('db_connect.php');
 
-<<<QUERY
+$truncator = <<<QUERY
 TRUNCATE national_parks;
 QUERY;
+$connection->exec($truncator);
 
 $insertion = <<<QUERY
 INSERT INTO national_parks
@@ -79,3 +80,10 @@ QUERY;
 echo "before exec insertion" . PHP_EOL;
 $connection->exec($insertion);
 echo "after exec insertion" . PHP_EOL;
+
+
+$stmt = $connection->query('SELECT * FROM national_parks');
+echo 'columnCount method: ' . $stmt->columnCount() . PHP_EOL;
+echo 'rowCount method: ' . $stmt->rowCount() . PHP_EOL;
+$national_parksArray =($connection->query('SELECT * FROM national_parks')->fetchAll(PDO::FETCH_ASSOC));
+print_r($national_parksArray);
