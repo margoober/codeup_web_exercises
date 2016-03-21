@@ -1,5 +1,21 @@
 <?php
 require_once('park_seeder.php');
+
+if (isset($_GET['page'])) {
+	$page = $_GET['page'];
+} else {
+	$page = 1;
+}
+$limit = 4;
+//determine $offset based on what page u're on
+// page | offset | limit
+//   1  |    0   | 4
+//   2  |    4   | 4
+//   3  |    8   | 4
+//   4  |   12   | 4
+$offset = ($page - 1) * 4;
+
+
 ?>
 <DOCTYPE! html>
 <html>
@@ -18,5 +34,7 @@ require_once('park_seeder.php');
 			<?= $singlePark['location']?>
 		</h3>
 	<?php endforeach; ?>
+
+	<a href="?page=<?= $page + 1?>">Next Page</a>
 </body>
 </html>
