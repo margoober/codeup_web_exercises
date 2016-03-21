@@ -1,0 +1,89 @@
+body {
+	background-color: #C06B2A;
+	font-family: helvetica;
+	color: #364D1F;
+}
+
+#description {
+	width: 60%
+}
+
+table {
+	width: 60%;
+	height: 300px;
+	border: 1px solid black
+}
+table td {
+	width: 100%;
+	height: 100%;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.paginator {
+	font-size: 60px;
+}
+
+a:visited {
+	color: goldenrod;
+}
+
+	.navclass {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    overflow: hidden;
+	    background-color: #333;
+	}
+
+	#navvie .navclass li {
+	    float: left;
+	}
+
+	#navvie li a {
+	    display: block;
+	    color: white;
+	    text-align: center;
+	    padding: 14px 16px;
+	    text-decoration: none;
+	}
+
+	#navvie a:hover:not(.active) {
+	    background-color: #111;
+	}
+
+	#navvie .active {
+	background-color:#4CAF50;
+	}
+
+.parkImage {
+	width: 100%;
+	height: 100%;
+}
+#OlympicImage {
+	background-image: url('olympic.jpg');
+}
+#DenaliImage {
+	background-image: url('denali.jpg');
+}
+#Big-BendImage {
+	background-image: url('bigbend.jpg');
+}
+#Crater-LakeImage {
+	background-image: url('craterlake.jpg');
+}
+#Joshua-TreeImage {
+	background-image: url('joshuatree.jpg');
+}
+#Isle-RoyaleImage {
+	background-image: url('isleroyale.jpg');
+}
+#Black-Canyon-of-the-GunnisonImage {
+	background-image: url('blackcanyon.jpg');
+}
+#Guadelupe-MountainsImage {
+	background-image: url('guadelupemountains.jpg');
+}
+#Isle-RoyaleImage {
+	background-image: url('isleroyale.jpg');
+}

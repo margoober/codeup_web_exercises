@@ -22,7 +22,7 @@ if (isset($_GET['park_id'])) {
 <html>
 <head>
 	<title>National Parp Info</title>
-	<link rel="stylesheet" type="text/css" href="/national_parks.css">
+	<link rel="stylesheet" type="text/css" href="/parks_stylesheet.css">
 </head>
 <body>
 	<h2>
@@ -43,8 +43,14 @@ if (isset($_GET['park_id'])) {
 	<h2>
 		About <?= $park['name'] ?> Napinal Praps
 	</h2>
-	<h3>
+	<h3 id="description">
+		<?= $park['description'] ?>
 	</h3>
+	<a href="?park_id="<?= $id - 1 ?>>&#8606 Previous Park</a>
+	<a href="?park_id="<?= $id + 1 ?>>Next Park &#8608</a>
+	<br>
+	<br>
+	<a href="">Back to Listings</a>
 
 </body>
 </html>

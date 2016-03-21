@@ -9,6 +9,7 @@ echo $connection->getAttribute(PDO::ATTR_CONNECTION_STATUS) . PHP_EOL;
 $dropTable = <<<QUERY
 	DROP TABLE IF EXISTS national_parks
 QUERY;
+
 $connection->exec($dropTable);
 
 /*use exec() to CREATE national_parks*/
@@ -19,6 +20,7 @@ $createTable = <<<QUERY
 		location VARCHAR(100) NOT NULL,
 		date_est YEAR(4) NOT NULL,
 		acreage DOUBLE NOT NULL,
+		description VARCHAR(500),
 		PRIMARY KEY(park_id)
 		)
 QUERY;
