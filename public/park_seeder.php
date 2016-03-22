@@ -148,4 +148,5 @@ foreach ($national_parksArray as $park) {
 	$stmt->bindValue(':description', $park['description'], PDO::PARAM_STR);
 
 	$stmt->execute();
+
 }

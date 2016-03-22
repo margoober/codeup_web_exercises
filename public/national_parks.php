@@ -4,7 +4,10 @@ define('DB_USER', 'parks_user');
 define('DB_PASSWORD', 'parks_user');
 define('DB_HOST', '127.0.0.1');
 
+var_dump($_POST);
+
 require_once('db_connect.php');
+require_once 'Input.php';
 if (isset($_GET['page'])) {
 	$page = $_GET['page'];
 	if ($page < 1) {
@@ -15,9 +18,46 @@ if (isset($_GET['page'])) {
 }
 $limit = 4;
 $offset = ($page - 1) * 4;
+
+//prepare statements for user submissions
+if (
+	(Input::has('nameSubmit'))
+	&& (Input::get('nameSubmit') != "")
+	&& (Input::has('acreageSubmit'))
+	&& (Input::get('acreageSubmit') != "")
+	&& (Input::get('stateSubmit'))
+	&& (Input::has('stateSubmit') != "")
+	&& (Input::get('date_estSubmit'))
+	&& (Input::has('date_estSubmit') != "")
+	&& (Input::get('descriptionSubmit'))
+	&& (Input::has('descriptionSubmit') != "")
+	) {
+	echo "THANK YOU FOR YOUR INPUT." . PHP_EOL;
+
+	$nameSubmit = $_POST['nameSubmit'];
+	$stateSubmit = $_POST['stateSubmit'];
+	$date_estSubmit = $_POST['date_estSubmit'];
+	$acreageSubmit = $_POST['acreageSubmit'];
+	$descriptionSubmit = $_POST['descriptionSubmit'];
+	$stmt = $connection->prepare("INSERT INTO national_parks (name, location, date_est, acreage, description) VALUES (:nameSubmit, :stateSubmit, :date_estSubmit, :acreageSubmit, :descriptionSubmit)");
+	$stmt->bindValue(':nameSubmit', $nameSubmit, PDO::PARAM_STR);
+	$stmt->bindValue(':stateSubmit', $stateSubmit, PDO::PARAM_STR);
+	$stmt->bindValue(':date_estSubmit', $date_estSubmit, PDO::PARAM_STR);
+	$stmt->bindValue(':acreageSubmit', $acreageSubmit, PDO::PARAM_STR);
+	$stmt->bindValue(':descriptionSubmit', $descriptionSubmit, PDO::PARAM_STR);
+	$stmt->execute();
+}
+
+//to convert a query statement to a prepare statement, change query to prepare and change $variable to :variable
 $stmt = $connection->prepare("SELECT * FROM national_parks LIMIT :limit OFFSET :offset");
 
-$national_parksArray = ($connection->query("SELECT * FROM national_parks LIMIT $limit OFFSET $offset")->fetchAll(PDO::FETCH_ASSOC));
+$stmt = ($connection->prepare("SELECT * FROM national_parks LIMIT :limit OFFSET :offset"));
+//now bind the placeholders to their corresponding variables!
+$stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
+
+$national_parksArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <DOCTYPE! html>
@@ -49,9 +89,9 @@ $national_parksArray = ($connection->query("SELECT * FROM national_parks LIMIT $
 		</h3>
 	<?php endforeach; ?>
 
-	<a class="paginator" href="?page=<?= $page - 1?>">&#8606</a>
 
 	<h2><?= $page?></h2>
+	<a class="paginator" href="?page=<?= $page - 1?>">&#8606</a>
 
 	<a class="paginator" href="?page=<?= $page + 1?>">&#8608</a>
 </body>
