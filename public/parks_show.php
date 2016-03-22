@@ -46,8 +46,8 @@ if (isset($_GET['park_id'])) {
 	<h3 id="description">
 		<?= $park['description'] ?>
 	</h3>
-	<a href="?park_id="<?= $id - 1 ?>>&#8606 Previous Park</a>
-	<a href="?park_id="<?= $id + 1 ?>>Next Park &#8608</a>
+	<a href="?park_id=<?= $id - 1 ?>">&#8606 Previous Park</a>
+	<a href="?park_id=<?= $id + 1 ?>">Next Park &#8608</a>
 	<br>
 	<br>
 	<a href="">Back to Listings</a>
