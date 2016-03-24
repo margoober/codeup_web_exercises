@@ -10,7 +10,24 @@ class Input
 	{
 		return self::has($key) ? $_REQUEST[$key] : $default;
 	}
-	
+
+	public static function getString($key){
+		if (is_string($key)) {
+			return self::get($key);
+		} else {
+			throw new Exception('$key must be a string!!');
+		}
+	}
+
+	public static function getNumber($key){
+		if (is_numeric($key)) {
+			return self::get($key);
+		} else {
+			throw new Exception('$key must be a number!!');
+		}
+
+	}
+
 	public static function escape($input)
 	{
 		return htmlspecialchars(strip_tags($input));
