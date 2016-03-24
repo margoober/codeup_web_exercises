@@ -20,16 +20,20 @@ $limit = 4;
 $offset = ($page - 1) * 4;
 
 //prepare statements for user submissions
+
+//A NOTE FROM THURSDAY: right now, the specific getDate/String/Number methods from Input class are only being applied at the user submission level. to update this, (remove these?? maybe not) add these to your PDO, or whatever it is called)
+
+//note FROM THURSDAY CATCH LESSON: Push your errors onto an $errors[] array.
 if (
 	(Input::has('nameSubmit'))
-	&& (Input::get('nameSubmit') != "")
+	&& (Input::getString('nameSubmit') != "")
 	&& (Input::has('acreageSubmit'))
-	&& (Input::get('acreageSubmit') != "")
-	&& (Input::get('stateSubmit'))
+	&& (Input::getNumber('acreageSubmit') != "")
+	&& (Input::getString('stateSubmit'))
 	&& (Input::has('stateSubmit') != "")
-	&& (Input::get('date_estSubmit'))
+	&& (Input::getDate('date_estSubmit'))
 	&& (Input::has('date_estSubmit') != "")
-	&& (Input::get('descriptionSubmit'))
+	&& (Input::getString('descriptionSubmit'))
 	&& (Input::has('descriptionSubmit') != "")
 	) {
 	echo "THANK YOU FOR YOUR INPUT." . PHP_EOL;

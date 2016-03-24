@@ -12,20 +12,36 @@ class Input
 	}
 
 	public static function getString($key){
-		if (is_string($key)) {
-			return self::get($key);
+		$value = self::get($key);
+		if (
+			($value == null || is_resource($value))
+			|| (is_numeric($value) || is_bool($value))
+			|| (is_array($value)) || is_object($value)) {
+			throw new Exception('Your input must be a string!');
 		} else {
-			throw new Exception('$key must be a string!!');
+			return $value;
 		}
 	}
 
 	public static function getNumber($key){
-		if (is_numeric($key)) {
-			return self::get($key);
-		} else {
-			throw new Exception('$key must be a number!!');
-		}
 
+		$value = self::get($key);
+
+		if (!is_numeric($value) || $value == null) {
+			throw new Exception('The value is not a number or it is null');
+		} else {
+			return (float) $value;
+		}
+	}
+
+	public static function getDate($key){
+		$value = self::get($key);
+		$validDate = date_create($value);
+		if ($validDate) {
+			return $value;
+		} else {
+			throw new Exception("Must be a date!!");
+		}
 	}
 
 	public static function escape($input)
