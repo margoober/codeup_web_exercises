@@ -20,6 +20,7 @@ abstract class Model
         self::dbConnect();
 
         // @TODO: Initialize the $attributes property with the passed value
+        $this->attributes = $attributes;
     }
 
     /**
@@ -31,8 +32,21 @@ abstract class Model
     {
         if (!self::$dbc) {
             // @TODO: Connect to database
+            // Get new instance of PDO object
+            self::$dbc = new PDO('mysql:host=127.0.0.1;dbname=codeup_test_db', 'USERNAME', 'PASSWORD');
+
+            // Tell PDO to throw exceptions on error
+            $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
     }
+
+    public static function all() {
+        self::dbConnect();
+        $stmt = self::$dbc->query("SELECT * FROM static::$table");
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
 
     /**
      * Get a value from attributes based on its name
@@ -44,23 +58,30 @@ abstract class Model
     public function __get($name)
     {
         // @TODO: Return the value from attributes for $name if it exists, else return null
+        return isset($this->attributes[$name]) ? $this->attributes[$name] : null;
     }
 
     /**
      * Set a new value for a key in attributes
-     *
      * @param string $name  key for attributes array
      * @param mixed  $value value to be saved in attributes array
      */
     public function __set($name, $value)
     {
         // @TODO: Store name/value pair in attributes array
+        
     }
 
     /** Store the object in the database */
     public function save()
     {
         // @TODO: Ensure there are values in the attributes array before attempting to save
+
+        if(isset($this->id)) {
+            $this->update();
+        } else {
+            $this->insert();
+        }
 
         // @TODO: Call the proper database method: if the `id` is set this is an update, else it is a insert
     }
