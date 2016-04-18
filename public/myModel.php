@@ -37,6 +37,8 @@ abstract class Model
 
             // Tell PDO to throw exceptions on error
             $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8';
         }
     }
 
@@ -69,21 +71,24 @@ abstract class Model
     public function __set($name, $value)
     {
         // @TODO: Store name/value pair in attributes array
-        
+
     }
 
     /** Store the object in the database */
     public function save()
     {
         // @TODO: Ensure there are values in the attributes array before attempting to save
+        if (empty($this->attributes)) {
+            return;
+        }
 
-        if(isset($this->id)) {
+        // @TODO: Call the proper database method: if the `id` is set this is an update, else it is a insert
+
+        if (isset($this->attributes['id'])) {
             $this->update();
         } else {
             $this->insert();
         }
-
-        // @TODO: Call the proper database method: if the `id` is set this is an update, else it is a insert
     }
 
     /**

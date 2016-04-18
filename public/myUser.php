@@ -10,11 +10,16 @@ class User extends Model
     protected function insert()
     {
         // @TODO: Use prepared statements to ensure data security
-
+        $insert = 'INSERT INTO users (first_name, last_name, email, password) VALUES (:first_name, :last_name, :email, :password)';
+        $statement = self::$dbc->prepare($insert);
         // @TODO: You will need to iterate through all the attributes to build the prepared query
+        foreach ($this->attributes as $key => $value) {
+            $statement->bindValue(":$key", $value, PDO::PARAM_STR);
+        }
 
         // @TODO: After the insert, add the id back to the attributes array
         //        so the object properly represents a DB record
+
     }
 
     /** Update existing entry in the database */

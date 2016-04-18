@@ -20,7 +20,7 @@ $createTable = <<<QUERY
 		location VARCHAR(100) NOT NULL,
 		date_est YEAR(4) NOT NULL,
 		acreage DOUBLE NOT NULL,
-		description VARCHAR(500),
+		description CHAR(500),
 		PRIMARY KEY(park_id)
 		)
 QUERY;

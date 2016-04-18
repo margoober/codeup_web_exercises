@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="templateTest">
+<head>
+	<title>Angular Tests</title>
+	<style>
+		li:first-child {font-style: italic;}
+		li:last-child {font-weight: bold;}
+		.snakies {
+			height: 300px;
+			width: auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/templateTest.js"></script>
+	<ul>
+		<li ng-repeat="number in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']" ng-hide="number % 3 == 0">{{ number }} is not divisible by 3!</li>
+	</ul>
+	<h2>{{ "Some Letters" }}</h2>
+	<ul>
+		<li ng-repeat="letter in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']">{{ letter | uppercase}} {{ letter }}</li>
+	</ul>
+	<h2>{{ "2016's Most Fashionable Snakes" }}</h2>
+	<table>
+		<tr>
+			<td class="snakies" ng-repeat="pic in ['snake1.jpg', 'snake2.jpg', 'snake3.jpg']"><img class="snakies" ng-src="{{ pic }}"><br>{{ "Très chic!" }}</td>
+		</tr>
+		<tr>
+			<td class="snakies" ng-repeat="pic in ['snake4.jpg', 'snake5.jpg', 'snake6.jpg']"><img class="snakies" ng-src="{{ pic }}"><br>{{ "Bravo!" }}</td>
+		</tr>
+	</table>
+	<form novalidate>
+		<label for="favesnake">Your Favorite Snake</label>
+		<input type="text" id="favesnake" ng-model="favesnake"><br>
+		<label for="reason">My reasons is because:</label>
+		<input type="text" id="reason" ng-model="reason"><br>
+		<button type="submit">Submit!</button>
+
+	</form>
+	<h2>My favorite snake is: {{ favesnake }} because {{ reason }}</h2>
+</body>
+</html>
